@@ -1,10 +1,11 @@
+@import "./text.scss";
 @import "./variables.scss";
 
 body {
   background: $bg;
   margin: 0;
   padding: 0;
-  font-size: 16px;
+  font-size: $rem;
 }
 
 .header {
@@ -25,10 +26,50 @@ body {
   width: 100%;
   display: flex;
   flex-flow: wrap;
+  justify-content: space-around;
 }
 
-.cover {
-  width: calc(50% - 4px);
-  height: 400px;
-  border: 1px solid $border;
+.cover-tile {
+  width: 50%;
+  height: 25rem;
+
+  box-shadow: 0 8px 6px -6px rgb(65, 65, 65);
+  transition: 0.2s cubic-bezier(0.215, 0.61, 0.355, 1);
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  &:hover {
+    box-shadow: 0 11px 10px -6px rgb(86, 86, 86);
+  }
+}
+
+.cover-art {
+  width: 12.5rem;
+  height: 12.5rem;
+  background: $bg1;
+}
+
+.cover-text {
+  max-width: 12rem;
+  height: 4em;
+  border: 1px solid red;
+}
+
+.c1 {
+  background-color: $bg1;
+}
+.c2 {
+  background-color: $bg2;
+}
+.c3 {
+  background-color: $bg3;
+}
+.c4 {
+  background-color: $bg4;
+}
+
+@media only screen and (max-width: 600px) {
+  .cover-tile {
+    width: 100%;
+  }
 }
