@@ -1,6 +1,14 @@
-.cover-text h1 {
+h1 {
+  font-size: 1rem;
+  color: #9a9692;
   margin: 0;
-  font-size: 1.75em;
+  line-height: 1.5rem;
+}
+
+h2 {
+  font-size: 2rem;
+  color: #9a9692;
+  margin: 0;
 }
 
 body {
@@ -15,7 +23,7 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  height: 60px;
+  height: 3em;
   background-color: #e4e2df;
   color: #dd4c1e;
   display: flex;
@@ -24,7 +32,7 @@ body {
 }
 
 .main-container {
-  margin-top: calc(60px + 2rem);
+  margin-top: calc(60px + 1rem);
   width: 100%;
   display: flex;
   flex-flow: wrap;
@@ -47,32 +55,63 @@ body {
 .cover-art {
   width: 12.5rem;
   height: 12.5rem;
-  background: #d48bd2;
+  background: #dedede;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .cover-text {
-  max-width: 12rem;
-  height: 4em;
-  border: 1px solid red;
+  width: 12rem;
+  margin: 0;
+  height: auto;
+  text-align: center;
+}
+
+.c1 > .cover-art {
+  background-image: url("../assets/a0548655506_16.jpg");
+}
+
+.c2 > .cover-art {
+  background-image: url("../assets/2.-Mount-Kimbie-Cold-Spring-Fault-Less-Youth.jpg");
+}
+
+.c3 > .cover-art {
+  background-image: url("../assets/5127-marsvolta.jpg");
+}
+
+.c4 > .cover-art {
+  background-image: url("../assets/8a6acde7478842e534371a989b8bc395.jpg");
 }
 
 .c1 {
-  background-color: #d48bd2;
+  background-color: #dedede;
+}
+.c1 .cover-art {
+  background-color: #acbda8;
 }
 
 .c2 {
   background-color: #3648d0;
 }
+.c2 .cover-art {
+  background-color: #bdc6c9;
+}
 
 .c3 {
-  background-color: #3d3834;
+  background-color: #bdc6c9;
+}
+.c3 .cover-art {
+  background-color: #3648d0;
 }
 
 .c4 {
-  background-color: #f06311;
+  background-color: #acbda8;
+}
+.c4 .cover-art {
+  background-color: #dedede;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 1000px) {
   .cover-tile {
     width: 100%;
   }

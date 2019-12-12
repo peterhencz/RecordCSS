@@ -1,4 +1,15 @@
-.cover-text h1 {
+@import "./variables.scss";
+
+@mixin text-init($font-size, $font-color) {
+  font-size: $font-size;
+  color: $font-color;
   margin: 0;
-  font-size: 1.75em;
+}
+
+h1 {
+  @include text-init(1rem, $cover-tile-text);
+  line-height: 1.75rem;
+}
+h2 {
+  @include text-init(2rem, $cover-tile-text);
 }
