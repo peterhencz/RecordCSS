@@ -1,15 +1,17 @@
 @import "./variables.scss";
 
-@mixin text-init($font-size, $font-color) {
+@mixin text-init($font-size) {
   font-size: $font-size;
-  color: $font-color;
   margin: 0;
 }
 
 h1 {
-  @include text-init(1rem, $cover-tile-text);
+  @include text-init(1.5rem);
   line-height: 1.75rem;
+  font-family: "Serico";
 }
+
 h2 {
-  @include text-init(2rem, $cover-tile-text);
+  @include text-init(2rem);
+  font-family: "League Spartan";
 }

@@ -1,14 +1,25 @@
+@font-face {
+  font-family: "League Spartan";
+  src: url("../../assets/leaguespartan-bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Serico";
+  src: url("../../assets/Serico-Regular.otf") format("opentype");
+  font-style: normal;
+}
 h1 {
-  font-size: 1rem;
-  color: #9a9692;
+  font-size: 1.5rem;
   margin: 0;
   line-height: 1.75rem;
+  font-family: "Serico";
 }
 
 h2 {
   font-size: 2rem;
-  color: #9a9692;
   margin: 0;
+  font-family: "League Spartan";
 }
 
 body {
@@ -19,16 +30,18 @@ body {
 }
 
 .header {
+  font-family: "League Spartan";
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  height: 3em;
+  height: 3rem;
   background-color: #e4e2df;
   color: #dd4c1e;
   display: flex;
   align-items: center;
   padding: 1rem;
+  z-index: 2;
 }
 
 .main-container {
@@ -42,78 +55,71 @@ body {
 .cover-tile {
   width: 50%;
   height: 25rem;
-  box-shadow: 0 8px 6px -6px #414141;
-  transition: 0.2s cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
   display: flex;
   justify-content: space-evenly;
   align-items: center;
 }
 .cover-tile:hover {
-  opacity: 0.8;
+  opacity: 0.9;
+}
+
+.tile-full-size {
+  width: 100vw;
+  height: calc(100vh - 80px);
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+.tile-full-size > .cover-art {
+  width: 70vh;
+  height: 70vh;
 }
 
 .cover-art {
   width: 12.5rem;
   height: 12.5rem;
-  background: #dedede;
   background-repeat: no-repeat;
   background-size: cover;
 }
+.cover-art:hover {
+  cursor: pointer;
+}
 
 .cover-text {
-  width: 12rem;
+  width: 36%;
   margin: 0;
   height: auto;
   text-align: center;
 }
 
-.c1 > .cover-art {
-  background-image: url("../assets/a0548655506_16.jpg");
+.cover-close {
+  font-family: "League Spartan";
+  font-size: 1em;
+  position: fixed;
+  right: 2rem;
+  top: 6rem;
+  width: 2em;
+  height: 2em;
+}
+.cover-close:hover {
+  cursor: pointer;
+  opacity: 0.8;
 }
 
-.c2 > .cover-art {
-  background-image: url("../assets/2.-Mount-Kimbie-Cold-Spring-Fault-Less-Youth.jpg");
+@media only screen and (max-width: 1240px) {
+  .cover-text {
+    display: none;
+  }
 }
-
-.c3 > .cover-art {
-  background-image: url("../assets/5127-marsvolta.jpg");
-}
-
-.c4 > .cover-art {
-  background-image: url("../assets/8a6acde7478842e534371a989b8bc395.jpg");
-}
-
-.c1 {
-  background-color: #dedede;
-}
-.c1 .cover-art {
-  background-color: #acbda8;
-}
-
-.c2 {
-  background-color: #3648d0;
-}
-.c2 .cover-art {
-  background-color: #bdc6c9;
-}
-
-.c3 {
-  background-color: #bdc6c9;
-}
-.c3 .cover-art {
-  background-color: #3648d0;
-}
-
-.c4 {
-  background-color: #acbda8;
-}
-.c4 .cover-art {
-  background-color: #dedede;
-}
-
 @media only screen and (max-width: 1000px) {
   .cover-tile {
     width: 100%;
+  }
+
+  .cover-text {
+    display: block;
   }
 }
 
