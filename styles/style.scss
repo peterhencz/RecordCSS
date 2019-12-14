@@ -32,7 +32,7 @@ body {
   color: $header-text;
   display: flex;
   align-items: center;
-  padding: 1rem;
+  padding: 1rem 5%;
   z-index: 2;
 }
 
@@ -40,33 +40,61 @@ body {
   margin-top: calc(60px + 1rem);
   width: 100%;
   display: flex;
-  flex-flow: wrap;
+  flex-wrap: wrap;
   justify-content: space-around;
 }
 
-.cover-tile {
+.tile-container {
   width: 50%;
   height: 25rem;
-  transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+  &:nth-child(even) .tile-full-size {
+    position: relative;
+    float: right;
+  }
+  &:nth-child(even) .cover-tile {
+    position: relative;
+    float: right;
+  }
+  &:nth-child(odd) .tile-full-size {
+    float: left;
+    position: relative;
+  }
+
+  &:nth-child(odd) .cover-tile {
+    position: relative;
+    float: left;
+  }
+}
+.cover-tile {
+  top: auto;
+  width: 50vw;
+  height: 25rem;
+  transition: 0.9s cubic-bezier(0.215, 0.61, 0.355, 1);
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+
   &:hover {
     opacity: 0.9;
   }
 }
 
 .tile-full-size {
+  // position: relative;
+  // left: 0;
   width: 100vw;
   height: calc(100vh - 80px);
-
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition: 0.9s cubic-bezier(0.215, 0.61, 0.355, 1);
+
   & > .cover-art {
     width: 70vh;
     height: 70vh;
+  }
+  &:hover {
+    opacity: 1;
   }
 }
 
@@ -75,6 +103,7 @@ body {
   height: 12.5rem;
   background-repeat: no-repeat;
   background-size: cover;
+  transition: 0.9s;
   &:hover {
     cursor: pointer;
   }
@@ -90,9 +119,9 @@ body {
 .cover-close {
   font-family: "League Spartan";
   font-size: 1em;
-  position: fixed;
-  right: 2rem;
-  top: 6rem;
+  position: absolute;
+  right: 3rem;
+  top: 3rem;
   width: 2em;
   height: 2em;
   &:hover {
